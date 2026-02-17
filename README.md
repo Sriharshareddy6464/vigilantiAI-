@@ -33,12 +33,12 @@ SafeDrive is a real-time driver safety application designed to prevent accidents
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/vivekvarma-01/Safe-Drive.git
-   cd Safe-Drive
+   git clone https://github.com/Sriharshareddy6464/vigilantiAI-.git
+   cd vigilantiAI-
    ```
 
 2. **Install Dependencies**
-   Ensure you have Python installed. Then run:
+   Ensure you have Python 3.11+ installed. Then run:
    ```bash
    pip install -r requirements.txt
    ```
