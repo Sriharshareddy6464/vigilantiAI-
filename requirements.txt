@@ -1,0 +1,7 @@
+opencv-python
+mediapipe==0.10.9
+protobuf<4.0.0
+numpy
+Pillow
+matplotlib
+pyttsx3
