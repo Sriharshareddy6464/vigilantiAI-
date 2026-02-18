@@ -1,7 +1,7 @@
 
-# 🚗 SafeDrive – Driver Drowsiness Detection System
+# 🚗 VigilantiAI – Driver Drowsiness Detection System
 
-SafeDrive is a real-time driver safety application designed to prevent accidents caused by driver fatigue. It uses computer vision and facial landmark detection to monitor the driver's state (drowsiness and yawning) and issues timely visual and audio alerts.
+VigilantiAI is a real-time driver safety application designed to prevent accidents caused by driver fatigue. It uses computer vision and facial landmark detection to monitor the driver's state (drowsiness and yawning) and issues timely visual and audio alerts.
 
 ---
 
