@@ -1,7 +1,7 @@
 
-# 🚗 SafeDrive – Driver Drowsiness Detection System
+# 🚗 VigilantiAI – Driver Drowsiness Detection System
 
-SafeDrive is a real-time driver safety application designed to prevent accidents caused by driver fatigue. It uses computer vision and facial landmark detection to monitor the driver's state (drowsiness and yawning) and issues timely visual and audio alerts.
+VigilantiAI is a real-time driver safety application designed to prevent accidents caused by driver fatigue. It uses computer vision and facial landmark detection to monitor the driver's state (drowsiness and yawning) and issues timely visual and audio alerts.
 
 ---
 
@@ -57,7 +57,7 @@ This script automatically checks for the Python launcher and runs the applicatio
 ### Option 2: Run via Python
 Directly execute the main script:
 ```bash
-python SafeDrive.py
+python VigilantiAI.py
 ```
 
 ### Operational Steps:
@@ -89,7 +89,7 @@ python SafeDrive.py
 
 ```
 ├── logs/                 # Stores session logs (timestamped text files)
-├── SafeDrive.py          # Main application script
+├── VigilantiAI.py          # Main application script
 ├── README.md             # Project documentation
 ├── requirements.txt      # Python dependencies
 └── start.bat             # Quick launch script for Windows
