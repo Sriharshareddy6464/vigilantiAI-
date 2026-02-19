@@ -11,15 +11,33 @@ import time
 import threading
 import os
 
+import queue
+
 # MediaPipe and Audio Setup
 mp_face_mesh = mp.solutions.face_mesh
 face_mesh = mp_face_mesh.FaceMesh(static_image_mode=False, max_num_faces=1,
                                    refine_landmarks=True, min_detection_confidence=0.5,
                                    min_tracking_confidence=0.5)
 engine = pyttsx3.init()
+speech_queue = queue.Queue()
+
+def speech_worker():
+    while True:
+        text = speech_queue.get()
+        if text is None:
+            break
+        try:
+            engine.say(text)
+            engine.runAndWait()
+        except Exception as e:
+            print(f"Error in speech worker: {e}")
+        speech_queue.task_done()
+
+# Start speech worker thread
+threading.Thread(target=speech_worker, daemon=True).start()
 
 def speak(text):
-    threading.Thread(target=lambda: (engine.say(text), engine.runAndWait()), daemon=True).start()
+    speech_queue.put(text)
 
 # Constants
 LEFT_EYE = [33, 160, 158, 133, 153, 144]

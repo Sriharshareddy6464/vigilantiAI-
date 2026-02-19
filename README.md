@@ -57,7 +57,7 @@ This script automatically checks for the Python launcher and runs the applicatio
 ### Option 2: Run via Python
 Directly execute the main script:
 ```bash
-python SafeDrive.py
+python VigilantiAI.py
 ```
 
 ### Operational Steps:
@@ -89,7 +89,7 @@ python SafeDrive.py
 
 ```
 ├── logs/                 # Stores session logs (timestamped text files)
-├── SafeDrive.py          # Main application script
+├── VigilantiAI.py          # Main application script
 ├── README.md             # Project documentation
 ├── requirements.txt      # Python dependencies
 └── start.bat             # Quick launch script for Windows
@@ -103,3 +103,31 @@ python SafeDrive.py
 - [ ] Add support for head pose estimation (distraction detection).
 - [ ] Mobile app integration.
 - [ ] refined threshold tuning UI.
+
+---
+
+## 🐳 Docker Support
+
+To run VigilantiAI in a consistent environment, you can use Docker.
+
+> **Note**: Running GUI applications with webcam access in Docker requires specific configuration (X11 forwarding + device mapping).
+
+### Build the Image
+```bash
+docker build -t vigilantiai .
+```
+
+### Run (Linux / WSL2)
+```bash
+docker run --rm -it \
+  --device /dev/video0 \
+  --device /dev/snd \
+  -e DISPLAY=$DISPLAY \
+  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  vigilantiai
+```
+
+### Run with Docker Compose
+```bash
+docker-compose up --build
+```

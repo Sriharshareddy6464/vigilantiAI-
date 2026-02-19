@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  vigilantiai:
+    build: .
+    image: vigilantiai:latest
+    container_name: vigilantiai
+    # Share Host Display (Linux/WSL2)
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./logs:/app/logs
+    # Device mapping for Webcam and Audio
+    # Note: On Windows Docker Desktop, this requires WSL2 USB/Device passthrough configuration
+    devices:
+      - /dev/video0:/dev/video0  # Webcam
+      - /dev/snd:/dev/snd        # Audio
+    privileged: true             # sometimes needed for hardware access
+    stdin_open: true             # Keep stdin open
+    tty: true                    # Allocate pseudo-TTY
